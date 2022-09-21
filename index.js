@@ -9,7 +9,7 @@ app.get('/', async (req, res) => {
     let transporter = nodemailer.createTransport({
         name: 'godspeedgames.com',
         host: "smtp.mailtrap.io",
-        port: 587,
+        port: 2525,
         secure: false, // true for 465, false for other ports
         auth: {
             user: "20983252ca9ddc", // generated ethereal user
