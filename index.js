@@ -1,5 +1,5 @@
 const express = require('express');
-//const nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer');
 const app = express();
 
 app.get('/', async (req, res) => {
