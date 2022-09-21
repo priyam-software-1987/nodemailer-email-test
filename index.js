@@ -6,10 +6,10 @@ app.get('/', async (req, res) => {
 
     
 
-    let transporter = nodemailer.createTransport({
+    let transporter = nodemailer.createTransport('SMTP',{
         name: '157.230.191.79',
         host: "smtp.mailtrap.io",
-        port: 2525,
+        port: 587,
         secure: false, // true for 465, false for other ports
         auth: {
             user: "20983252ca9ddc", // generated ethereal user
