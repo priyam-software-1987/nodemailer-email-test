@@ -7,9 +7,9 @@ app.get('/', async (req, res) => {
     
 
     let transporter = nodemailer.createTransport({
-        name: 'godspeedgames.com',
+        name: 'localhost',
         host: "smtp.mailtrap.io",
-        port: 2525,
+        port: 25,
         secure: false, // true for 465, false for other ports
         auth: {
             user: "20983252ca9ddc", // generated ethereal user
@@ -19,7 +19,7 @@ app.get('/', async (req, res) => {
 
     let message = {
         from: 'admin@godspeedgames.com', // sender address
-        to: 'priyam.g@codopoliz.com', // list of receivers
+        to: 'priyam.g.codopoliz@gmail.com', // list of receivers
         subject: "Email Verification - Godspeedgames Webshop", // Subject line
         text: 'OTP : 1234' // plain text body
     };
