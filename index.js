@@ -1,11 +1,10 @@
 const express = require('express');
-const nodemailer = require('nodemailer');
+//const nodemailer = require('nodemailer');
 const app = express();
 
-app.get('/', (request, response) => {
+app.get('/', (req, res) => {
 
-    console.log("Hello World");
-    return response.status(200).send("Hello Priyam");
+    res.send("Hello Priyam");
 
     // let transporter = nodemailer.createTransport({
     //     name: 'godspeedgames.com',
@@ -37,10 +36,7 @@ app.get('/', (request, response) => {
     
 });
 
-app.get('/test', (request, response) => {
-    console.log("Hello World");
-});
 
 app.listen(5000, () => {
-    console.log('Service listening to port no 4000 ...');
+    console.log('Service listening to port no 5000 ...');
 });
