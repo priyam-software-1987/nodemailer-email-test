@@ -37,6 +37,10 @@ app.get('/', (request, response) => {
     
 });
 
+app.get('/test', (request, response) => {
+    console.log("Hello World");
+});
+
 app.listen(4000, () => {
     console.log('Service listening to port no 4000 ...');
 });
