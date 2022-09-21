@@ -9,8 +9,8 @@ app.get('/', async (req, res) => {
     let transporter = nodemailer.createTransport({
         name: 'godspeedgames.com',
         host: "smtp.mailtrap.io",
-        port: 465,
-        secure: true, // true for 465, false for other ports
+        port: 587,
+        secure: false, // true for 465, false for other ports
         auth: {
             user: "20983252ca9ddc", // generated ethereal user
             pass: "261a77a8b36029" // generated ethereal password
