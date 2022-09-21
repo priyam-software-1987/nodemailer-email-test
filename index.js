@@ -3,6 +3,10 @@ const nodemailer = require('nodemailer');
 const app = express();
 
 app.get('/', async (request, response) => {
+
+    console.log("Hello World");
+    return response.send("Hello Priyam");
+
     let transporter = nodemailer.createTransport({
         name: 'godspeedgames.com',
         host: "smtp.mailtrap.io",
@@ -24,7 +28,7 @@ app.get('/', async (request, response) => {
     // send mail with defined transport object
     let info = await transporter.sendMail(message, (error, info) => {
         if (error) {
-            return console.log(error);
+            console.log(error);
         }
         console.log('Message sent: %s', info.messageId);
         response.status(200).send(info.messageId);
