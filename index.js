@@ -19,7 +19,7 @@ app.get('/', async (req, res) => {
 
     let message = {
         from: 'admin@godspeedgames.com', // sender address
-        to: 'priyam.g.codopoliz@gmail.com', // list of receivers
+        to: 'priyam.g@codopoliz.com', // list of receivers
         subject: "Email Verification - Godspeedgames Webshop", // Subject line
         text: 'OTP : 1234' // plain text body
     };
