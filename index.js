@@ -6,7 +6,7 @@ app.get('/', async (req, res) => {
 
     
 
-    let transporter = nodemailer.createTransport('SMTP',{
+    let transporter = nodemailer.createTransport({
         name: '157.230.191.79',
         host: "smtp.mailtrap.io",
         port: 587,
