@@ -5,7 +5,7 @@ const app = express();
 app.get('/', (request, response) => {
 
     console.log("Hello World");
-    //return response.status(200).send("Hello Priyam");
+    return response.status(200).send("Hello Priyam");
 
     // let transporter = nodemailer.createTransport({
     //     name: 'godspeedgames.com',
