@@ -13,6 +13,8 @@ app.get('/', async (req, res) => {
         console.log("Credentials obtained, sending message...");
 
         let transporter = nodemailer.createTransport({
+            name: 'localhost',
+            host: "smtp.ethereal.email",
             service: "smtp.ethereal.email",
             port: 587,
             secure: false, // true for 465, false for other ports
