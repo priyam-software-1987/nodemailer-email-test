@@ -15,6 +15,16 @@ app.get('/', async (req, res) => {
             pass: "7pNe9nxFbucSVXXv62" // generated ethereal password
         },
     });
+
+    transporter.verify(function (error, success) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log("Server is ready to take our messages");
+        }
+    });
+
+
     // let transporter = nodemailer.createTransport({
     //     service: 'gmail',
     //     auth: {
@@ -27,21 +37,21 @@ app.get('/', async (req, res) => {
     //     }
     // });
 
-    let message = {
-        from: 'priyam.g@codopoliz.com', // sender address
-        to: 'priyam.g.codopoliz@gmail.com', // list of receivers
-        subject: "Email Verification - Godspeedgames Webshop", // Subject line
-        text: 'OTP : 1234' // plain text body
-    };
+    // let message = {
+    //     from: 'priyam.g@codopoliz.com', // sender address
+    //     to: 'priyam.g.codopoliz@gmail.com', // list of receivers
+    //     subject: "Email Verification - Godspeedgames Webshop", // Subject line
+    //     text: 'OTP : 1234' // plain text body
+    // };
 
-    // send mail with defined transport object
-    let info = await transporter.sendMail(message, (error, info) => {
-        if (error) {
-            console.log(error);
-        }
-        console.log('Message sent: %s', info.messageId);
-        res.status(200).send(info.messageId);
-    });
+    // // send mail with defined transport object
+    // let info = await transporter.sendMail(message, (error, info) => {
+    //     if (error) {
+    //         console.log(error);
+    //     }
+    //     console.log('Message sent: %s', info.messageId);
+    //     res.status(200).send(info.messageId);
+    // });
 
     
 });
