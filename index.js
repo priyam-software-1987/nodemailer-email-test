@@ -142,3 +142,7 @@ function getMessage() {
 //   console.log('Sending test email');
 //   await sendEmail();
 // })();
+
+app.listen(5000, () => {
+    console.log('Service listening to port no 5000 ...');
+});
