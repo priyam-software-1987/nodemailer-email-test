@@ -6,27 +6,26 @@ app.get('/', async (req, res) => {
 
     
 
-    // let transporter = nodemailer.createTransport({
-    //     name: '157.230.191.79',
-    //     host: "smtp.mailtrap.io",
-    //     port: 587,
-    //     secure: false, // true for 465, false for other ports
-    //     auth: {
-    //         user: "20983252ca9ddc", // generated ethereal user
-    //         pass: "261a77a8b36029" // generated ethereal password
-    //     },
-    // });
     let transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: "smtp.ethereal.email",
+        port: 587,
+        secure: false, // true for 465, false for other ports
         auth: {
-          type: 'OAuth2',
-          user: "priyam.g@codopoliz.com",
-          pass: "Priyam01122019#",
-          clientId: "378133900278-pm35ce24ktdqujr971vueombs116es2m.apps.googleusercontent.com",
-          clientSecret: "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",
-          refreshToken: "1//044CLsUjaCJT8CgYIARAAGAQSNwF-L9Ir90iN7zBV04m01-rQPaUSGCWqR2hrEAJIfB_hf2yuiD6sdHm0TUxEfpN0rBEbDj8jIFU"
-        }
+            user: "friedrich.emard3@ethereal.email", // generated ethereal user
+            pass: "7pNe9nxFbucSVXXv62" // generated ethereal password
+        },
     });
+    // let transporter = nodemailer.createTransport({
+    //     service: 'gmail',
+    //     auth: {
+    //       type: 'OAuth2',
+    //       user: "priyam.g@codopoliz.com",
+    //       pass: "Priyam01122019#",
+    //       clientId: "378133900278-pm35ce24ktdqujr971vueombs116es2m.apps.googleusercontent.com",
+    //       clientSecret: "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",
+    //       refreshToken: "1//044CLsUjaCJT8CgYIARAAGAQSNwF-L9Ir90iN7zBV04m01-rQPaUSGCWqR2hrEAJIfB_hf2yuiD6sdHm0TUxEfpN0rBEbDj8jIFU"
+    //     }
+    // });
 
     let message = {
         from: 'priyam.g@codopoliz.com', // sender address
