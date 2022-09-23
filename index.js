@@ -12,16 +12,25 @@ app.get('/', async (req, res) => {
         
         console.log("Credentials obtained, sending message...");
 
+        // let transporter = nodemailer.createTransport({
+        //     name: 'localhost',
+        //     host: "smtp.ethereal.email",
+        //     service: "smtp.ethereal.email",
+        //     port: 587,
+        //     secure: false, // true for 465, false for other ports
+        //     auth: {
+        //         user: "friedrich.emard3@ethereal.email", // generated ethereal user
+        //         pass: "7pNe9nxFbucSVXXv62" // generated ethereal password
+        //     },
+        // });
         let transporter = nodemailer.createTransport({
-            name: 'localhost',
-            host: "smtp.ethereal.email",
-            service: "smtp.ethereal.email",
+            host: "smtp.gmail.com",
             port: 587,
-            secure: false, // true for 465, false for other ports
+            secure: false,
             auth: {
-                user: "friedrich.emard3@ethereal.email", // generated ethereal user
-                pass: "7pNe9nxFbucSVXXv62" // generated ethereal password
-            },
+              user: 'priyam.20112020@gmail.com',
+              pass: '321@Sima#123'
+            }
         });
 
         transporter.verify(function (error, success) {
