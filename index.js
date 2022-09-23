@@ -95,7 +95,7 @@
 const express = require('express');
 const sendGridMail = require('@sendgrid/mail');
 const app = express();
-sendGridMail.setApiKey(process.env.SENDGRID_API_KEY);
+sendGridMail.setApiKey('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');
 
 app.get('/', async (req, res) => {
 
