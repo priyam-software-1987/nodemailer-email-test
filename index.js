@@ -102,6 +102,7 @@ app.get('/', async (req, res) => {
     try {
         await sendGridMail.send(getMessage());
         console.log('Test email sent successfully');
+        res.send('Email sent');
     } catch (error) {
         console.error('Error sending test email');
         console.error(error);
