@@ -44,14 +44,26 @@ app.get('/', async (req, res) => {
     //     text: 'OTP : 1234' // plain text body
     // };
 
-    // // send mail with defined transport object
-    // let info = await transporter.sendMail(message, (error, info) => {
-    //     if (error) {
-    //         console.log(error);
-    //     }
-    //     console.log('Message sent: %s', info.messageId);
-    //     res.status(200).send(info.messageId);
-    // });
+
+    let message = {
+        from: 'priyam.g@codopoliz.com', // listed in rfc822 message header
+        to: 'priyam.g.codopoliz@gmail.com', // listed in rfc822 message header
+        subject: "Email Verification - Godspeedgames Webshop", // Subject line
+        text: 'OTP : 1234', // plain text body
+        envelope: {
+            from: 'Priyam Ghosh <priyam.g@codopoliz.com>', // used as MAIL FROM: address for SMTP
+            to: 'priyam.g.codopoliz@gmail.com' // used as RCPT TO: address for SMTP
+        }
+    }
+
+    // send mail with defined transport object
+    let info = await transporter.sendMail(message, (error, info) => {
+        if (error) {
+            console.log(error);
+        }
+        console.log('Message sent: %s', info.messageId);
+        res.status(200).send(info.messageId);
+    });
 
     
 });
