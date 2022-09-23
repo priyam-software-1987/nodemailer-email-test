@@ -92,35 +92,53 @@
 
 
 
-
+const express = require('express');
 const sendGridMail = require('@sendgrid/mail');
+const app = express();
 sendGridMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-function getMessage() {
-  const body = 'OTP : 2506';
-  return {
-    to: 'priyam.g.codopoliz@gmail.com',
-    from: 'priyam.g@codopoliz.com',
-    subject: 'Godspeed Games - OTP',
-    text: body,
-    html: `<strong>${body}</strong>`,
-  };
-}
+app.get('/', async (req, res) => {
 
-async function sendEmail() {
-  try {
-    await sendGridMail.send(getMessage());
-    console.log('Test email sent successfully');
-  } catch (error) {
-    console.error('Error sending test email');
-    console.error(error);
-    if (error.response) {
-      console.error(error.response.body)
+    try {
+        await sendGridMail.send(getMessage());
+        console.log('Test email sent successfully');
+    } catch (error) {
+        console.error('Error sending test email');
+        console.error(error);
+        if (error.response) {
+            console.error(error.response.body)
+        }
     }
-  }
+});
+
+
+
+
+function getMessage() {
+    const body = 'OTP : 2506';
+    return {
+        to: 'priyam.g.codopoliz@gmail.com',
+        from: 'priyam.g@codopoliz.com',
+        subject: 'Godspeed Games - OTP',
+        text: body,
+        html: `<strong>${body}</strong>`
+    };
 }
 
-(async () => {
-  console.log('Sending test email');
-  await sendEmail();
-})();
+// async function sendEmail() {
+//   try {
+//     await sendGridMail.send(getMessage());
+//     console.log('Test email sent successfully');
+//   } catch (error) {
+//     console.error('Error sending test email');
+//     console.error(error);
+//     if (error.response) {
+//       console.error(error.response.body)
+//     }
+//   }
+// }
+
+// (async () => {
+//   console.log('Sending test email');
+//   await sendEmail();
+// })();
